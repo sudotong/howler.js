@@ -851,7 +851,7 @@
 
         if (Howler.state === 'running') {
           playWebAudio();
-        } else {
+        } else if (!self._playLock) {
           self._playLock = true;
 
           // Wait for the audio context to resume before playing.
